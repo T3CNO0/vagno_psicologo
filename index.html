@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Psicólogo especializado em TCC e Mindfulness. Atendimento online e presencial em Teixeira de Freitas - BA.">
+    
+    <title>Vagno Jonis - Psicólogo CRP 03/31228</title>
+    
+    <link rel="icon" href="assets/img/LogoVagno.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
+        <div class="navbar__container">
+            <a href="index.html" class="navbar__logo">
+                <img src="assets/img/LogoVagno.png" alt="Vagno Jonis Psicólogo">
+            </a>
+            
+            <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="navbar__menu" id="navMenu">
+                <li><a href="index.html" class="navbar__link">Home</a></li>
+                <li><a href="#sobre" class="navbar__link">Sobre</a></li>
+                <li><a href="#investimentos" class="navbar__link">Investimentos</a></li>
+                <li><a href="#tratamentos" class="navbar__link">Tratamentos</a></li>
+                <li><a href="clinica.html" class="navbar__link">Clínica</a></li>
+                <li><a href="mindfulness.html" class="navbar__link">Mindfulness</a></li>
+            </ul>
+            
+            <div class="navbar__actions">
+                <a href="https://wa.me/557399085901?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" 
+                   class="btn btn--primary btn--whatsapp" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <span>Agendar Consulta</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                </a>
+                
+                <button class="navbar__theme" id="darkBtn" aria-label="Alternar tema escuro/claro">
+                    <span class="theme__icon" id="themeIcon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Você se sente afetado por quadros de ansiedade, depressão ou insegurança?
+                </h1>
+                <p class="hero__subtitle">Vamos conversar</p>
+                <a href="https://wa.me/557399085901?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" 
+                   class="btn btn--primary btn--large btn--whatsapp" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <span>Marcar Consulta</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="sobre">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__vid"><video controls src="assets/img/sobre.mp4"></video></div>
+                  
+                    <div class="about__content">
+                        <h2 class="section__title">Sobre Vagno Jonis</h2>
+                        <p class="about__text">
+                            Vagno Jonis é psicólogo há mais de 6 anos, apaixonado por ajudar pessoas a ressignificarem suas histórias e encontrarem equilíbrio emocional. Especialista em Terapia Cognitivo-Comportamental (TCC), utiliza também em suas sessões técnicas de Mindfulness para auxiliar no processo terapêutico.
+                        </p>
+                    </div>
+                      <div class="about__image">
+                        <img src="assets/img/SubCapa.png" alt="Vagno Jonis" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="testimonials__overlay"></div>
+            <div class="container">
+                <h2 class="section__title section__title--light">Depoimentos</h2>
+                <div class="testimonials__grid">
+                    <article class="testimonial">
+                        <p class="testimonial__text">
+                            "Minha experiência com o Vagno Jonis tem sido transformadora. Desde a primeira sessão, me senti em um ambiente seguro e sem julgamentos. Ele tem uma sensibilidade única para ouvir o que nem sempre conseguimos dizer com palavras. Recomendo de olhos fechados!"
+                        </p>
+                        <cite class="testimonial__author">— Mariana Silva</cite>
+                    </article>
+                    
+                    <article class="testimonial">
+                        <p class="testimonial__text">
+                            "Procurei o Vagno em um momento de muita ansiedade e confusão mental. Com muita paciência e técnica, ele me ajudou a organizar meus pensamentos e a encontrar ferramentas práticas para lidar com o dia a dia. Hoje me sinto muito mais no controle da minha vida."
+                        </p>
+                        <cite class="testimonial__author">— Ricardo Oliveira</cite>
+                    </article>
+                    
+                    <article class="testimonial">
+                        <p class="testimonial__text">
+                            "Excelente psicólogo! O Vagno é extremamente atencioso, ético e pontual. O processo terapêutico com ele tem feito uma diferença gigante na minha saúde mental."
+                        </p>
+                        <cite class="testimonial__author">— Lucas Mendes</cite>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing" id="investimentos">
+            <div class="container">
+                <div class="pricing__grid">
+                    <div class="pricing__column">
+                        <h2 class="section__title section__title--light">Investimentos</h2>
+                        <ul class="pricing__list">
+                            <li class="pricing__item">
+                                <span class="pricing__icon">💎</span>
+                                <div>
+                                    <strong>Sessão Avulsa</strong>
+                                    <p>Flexibilidade para atendimentos pontuais — R$190,00</p>
+                                </div>
+                            </li>
+                            <li class="pricing__item">
+                                <span class="pricing__icon">📌</span>
+                                <div>
+                                    <strong>Sessão Quinzenal</strong>
+                                    <p>2 sessões — R$370,00 (R$185 cada)</p>
+                                </div>
+                            </li>
+                            <li class="pricing__item">
+                                <span class="pricing__icon">📦</span>
+                                <div>
+                                    <strong>Pacote 4 sessões</strong>
+                                    <p>5% de desconto — R$720,00 (R$180 cada)</p>
+                                </div>
+                            </li>
+                            <li class="pricing__item">
+                                <span class="pricing__icon">📦</span>
+                                <div>
+                                    <strong>Pacote 6 sessões</strong>
+                                    <p>R$1.026,00 (R$171 cada)</p>
+                                </div>
+                            </li>
+                            <li class="pricing__item">
+                                <span class="pricing__icon">📦</span>
+                                <div>
+                                    <strong>Pacote 8 sessões</strong>
+                                    <p>15% de desconto — R$1.280,00 (R$160 cada)</p>
+                                </div>
+                            </li>
+                            <li class="pricing__item">
+                                <span class="pricing__icon">🎯</span>
+                                <div>
+                                    <strong>Pacote 12 sessões</strong>
+                                    <p>21% de desconto — R$1.800,00 (R$150 cada)</p>
+                                </div>
+                            </li>
+                            <li class="pricing__item">
+                                <span class="pricing__icon">🎯</span>
+                                <div>
+                                    <strong>Orientação Profissional</strong>
+                                    <p>6 a 8 sessões — R$1.400,00 (valor fixo)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing__column">
+                        <h2 class="section__title section__title--light">Como funciona?</h2>
+                        <div class="process">
+                            <h3 class="process__subtitle">O que acontece na primeira sessão?</h3>
+                            <ul class="process__list">
+                                <li>Você me diz sua disponibilidade e, de acordo com minha agenda, fazemos uma marcação da primeira sessão.</li>
+                                <li>Se você gostar da nossa primeira sessão, fechamos o pacote com quatro sessões de 50 minutos.</li>
+                                <li>Na entrevista inicial, o psicólogo realiza uma escuta ativa para compreender o contexto e as queixas do paciente, estabelecendo um vínculo de confiança. O objetivo é conhecer a história de vida, identificar os principais desafios e iniciar a construção do entendimento sobre as demandas emocionais e psicológicas.</li>
+                                <li>O diagnóstico é elaborado a partir da análise das informações coletadas na entrevista, testes psicológicos, observações e a avaliação dos sintomas. O foco é identificar possíveis transtornos ou questões psicológicas, além de entender as causas subjacentes e as possíveis interações com o contexto social e familiar do paciente..</li>
+                                <li>Com base no diagnóstico, é formulado um plano de tratamento personalizado, que pode incluir sessões de psicoterapia, técnicas específicas e objetivos claros. O plano busca promover a mudança necessária no paciente, respeitando seu tempo, ritmo e necessidades, e pode ser ajustado conforme o progresso observado durante o acompanhamento.</li>
+                                <li>A alta é concedida quando o paciente atinge os objetivos terapêuticos ou demonstra melhora significativa no quadro, conseguindo aplicar as estratégias adquiridas durante o processo. A alta não significa o fim do cuidado, mas a conclusão de uma fase do tratamento, podendo ser necessário acompanhamento esporádico para garantir a manutenção dos resultados alcançados.</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="tratamentos">
+            <div class="container">
+                <h2 class="section__title">Como eu posso te ajudar?</h2>
+                <div class="services__grid">
+                    <article class="service-card">
+                        <div class="service-card__image">
+                            <img src="assets/img/Ansiedade.jpeg" alt="Tratamento de Ansiedade" loading="lazy">
+                        </div>
+                        <h3 class="service-card__title">Ansiedade</h3>
+                        <p class="service-card__text">
+                            Está sentindo que a ansiedade está dominando seu dia a dia? Saiba que você não está sozinho nessa jornada. Muitas pessoas enfrentam desafios semelhantes, mas a boa notícia é que é possível encontrar apoio e tratar a ansiedade de forma eficaz.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__image">
+                            <img src="assets/img/tristeza.jpeg" alt="Tratamento de Tristeza" loading="lazy">
+                        </div>
+                        <h3 class="service-card__title">Tristeza</h3>
+                        <p class="service-card__text">
+                            Todos nós passamos por momentos de tristeza. Quando a tristeza se prolonga e começa a afetar sua qualidade de vida, é importante buscar ajuda. Com apoio psicológico, você pode entender melhor suas emoções e aprender formas saudáveis de lidar com elas.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__image">
+                            <img src="assets/img/depressao.jpeg" alt="Tratamento de Depressão" loading="lazy">
+                        </div>
+                        <h3 class="service-card__title">Depressão</h3>
+                        <p class="service-card__text">
+                            A depressão pode parecer um peso impossível de carregar, mas você não precisa enfrentá-la sozinho. Com o acompanhamento certo, você pode superar esse momento difícil e se reconectar com a esperança e a alegria de viver.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-card__image">
+                            <img src="assets/img/medos.jpg" alt="Tratamento de Medos" loading="lazy">
+                        </div>
+                        <h3 class="service-card__title">Medos</h3>
+                        <p class="service-card__text">
+                            O medo pode nos paralisar, mas não precisa controlar nossa vida. Se seus medos estão impedindo você de seguir em frente, saiba que com orientação psicológica é possível aprender a lidar com eles de forma saudável.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="cta__overlay"></div>
+            <div class="cta__content">
+                <h2 class="cta__title">Marque uma consulta online </h2>
+                <p class="cta__subtitle">A terapia  online é um espaço seguro e acolhedor onde você pode se expressar com liberdade  e  praticidade  adaptando a sua rotina , local e horários.</p>
+                <a href="https://wa.me/557399085901?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" 
+                   class="btn btn--primary btn--large btn--whatsapp" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <span>WhatsApp</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="assets/img/LogoVagno.png" alt="Vagno Jonis Psicólogo" class="footer__logo">
+                </div>
+
+                <div class="footer__links">
+                    <h3 class="footer__title">Informações</h3>
+                    <ul class="footer__menu">
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#tratamentos">Tratamentos</a></li>
+                        <li><a href="#investimentos">Investimentos</a></li>
+                        <li><a href="https://wa.me/557399085901?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta">Agendamentos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__contact">
+                    <h3 class="footer__title">Consultório</h3>
+                    <ul class="footer__info">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            <a href="https://wa.me/557399085901?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer">(73) 9 9908-5901</a>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <a href="https://maps.app.goo.gl/kuNBKZmqQpHjvUeq9" target="_blank" rel="noopener noreferrer">R. da Alquimia, 229 - Vila Caraípe, Teixeira de Freitas - BA</a>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <a href="https://www.instagram.com/psivagnojonis/" target="_blank" rel="noopener noreferrer">@psivagnojonis</a>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <a href="mailto:vagnojonispsi@gmail.com">vagnojonispsi@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2026 Vagno Jonis Psicólogo - CRP 03/31228. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

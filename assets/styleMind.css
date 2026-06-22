@@ -1,0 +1,704 @@
+/* ===================================
+   CSS Variables & Reset
+   =================================== */
+:root {
+  /* Colors */
+  --color-primary: #2D7D6D;
+  --color-secondary: #634B57;
+  --color-accent: #25D366;
+  --color-dark: #1a1a1a;
+  --color-light: #ffffff;
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-300: #dee2e6;
+  --color-gray-700: #495057;
+  --color-gray-800: #343a40;
+  --color-gray-900: #212529;
+  
+  /* Mindfulness specific */
+  --color-mindful-primary: #6B4E71;
+  --color-mindful-secondary: #9B7EAC;
+  --color-mindful-light: #E8DFF5;
+  
+  /* Typography */
+  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-secondary: Georgia, 'Times New Roman', serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+body.dark {
+  --color-light: #1a1a1a;
+  --color-dark: #f8f9fa;
+  --color-gray-100: #212529;
+  --color-gray-200: #343a40;
+  --color-gray-300: #495057;
+  --color-gray-700: #dee2e6;
+  --color-gray-800: #e9ecef;
+  --color-gray-900: #f8f9fa;
+  --color-mindful-light: #2a1f35;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-dark);
+  background: linear-gradient(135deg, rgba(107, 78, 113, 0.05), rgba(155, 126, 172, 0.05)),
+              url('../assets/img/mindfulness.png') no-repeat center center / cover;
+  background-attachment: fixed;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-base), color var(--transition-base);
+  min-height: 100vh;
+}
+
+body.dark {
+  background:url('../assets/img/mindfulness2.png') no-repeat center center / cover;
+  background-attachment: fixed;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===================================
+   Utilities
+   =================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-mindful-primary);
+  font-family: var(--font-secondary);
+  text-align: center;
+}
+
+/* ===================================
+   Buttons
+   =================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0.875rem 1.75rem;
+  border: none;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-light);
+}
+
+.btn--primary:hover {
+  background: #1fb855;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--whatsapp svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===================================
+   Navbar
+   =================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+  color: #ffffff;
+}
+
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.transparent {
+  opacity: 0.9;
+}
+
+.navbar__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.navbar__logo img {
+  height: 60px;
+  width: auto;
+}
+
+.navbar__menu {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.navbar__link {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width var(--transition-base);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 80%;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--color-primary);
+}
+
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--color-dark);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.navbar__theme {
+  background: transparent;
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-full);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.navbar__theme:hover {
+  border-color: var(--color-primary);
+  transform: rotate(20deg);
+}
+
+.theme__icon {
+  font-size: 1.5rem;
+}
+
+/* ===================================
+   Mindfulness Hero Section
+   =================================== */
+.mindfulness-hero {
+  min-height: 100vh;
+  padding: calc(80px + var(--spacing-lg)) var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  align-items: center;
+}
+
+.mindfulness-hero__content {
+  backdrop-filter: blur(1px);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-xl);
+  animation: fadeInUp 0.8s ease;
+}
+
+
+.mindfulness-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--color-mindful-primary);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  font-family: var(--font-secondary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================
+   Mindfulness Intro
+   =================================== */
+.mindfulness-intro {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mindfulness-intro__text,
+.mindfulness-intro__conclusion {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-gray-700);
+  margin-bottom: var(--spacing-md);
+  text-align: justify;
+  text-shadow: 1px 1px 2px rgba(167, 161, 161, 0.8);
+}
+
+body.dark .mindfulness-intro__text,
+body.dark .mindfulness-intro__conclusion {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.mindfulness-intro__subtitle {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--color-mindful-secondary);
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+  font-family: var(--font-secondary);
+  text-shadow: 1px 1px 2px rgba(195, 195, 195, 0.8);
+}
+
+body.dark .mindfulness-intro__subtitle {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.mindfulness-intro__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.mindfulness-intro__list li {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-mindful-secondary);
+  transition: all var(--transition-base);
+}
+
+.mindfulness-intro__list li:hover {
+  transform: translateX(5px);
+}
+
+.list-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.mindfulness-intro__list strong {
+  display: block;
+  color: var(--color-mindful-primary);
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+body.dark .mindfulness-intro__list strong {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.mindfulness-intro__list p {
+  color: var(--color-gray-700);
+  line-height: 1.7;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+body.dark .mindfulness-intro__list p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ===================================
+   Practice Section
+   =================================== */
+.practice-section {
+  padding: var(--spacing-xl) 0;
+}
+
+/* Practice Guide */
+.practice-guide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  align-items: center;
+}
+
+.practice-guide__content {
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+
+.practice-guide__title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--color-mindful-primary);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-secondary);
+}
+
+.practice-guide__description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-gray-700);
+}
+
+.practice-guide__frame {
+
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 1;
+}
+
+.practice-guide__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Video Gallery */
+.video-gallery {
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+
+.video-gallery__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-mindful-primary);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  font-family: var(--font-secondary);
+}
+
+.video-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.video-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-mindful-light);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.video-card__wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-card__wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+.footer {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-light);
+  padding: var(--spacing-lg) 0 var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer__logo {
+  max-width: 200px;
+}
+
+.footer__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer__menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.footer__menu a:hover {
+  color: var(--color-accent);
+  padding-left: 5px;
+}
+
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer__info li {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: flex-start;
+}
+
+.footer__info svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer__info a:hover {
+  color: var(--color-accent);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: var(--spacing-md);
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 768px) {
+  :root {
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+  }
+
+  body, body.dark{
+    background-size: cover;
+  }
+
+
+  .navbar__container {
+    padding: 1rem;
+  }
+
+  .navbar__logo img {
+    height: 50px;
+  }
+
+  .navbar__menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    max-width: 300px;
+    background: var(--color-light);
+    flex-direction: column;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-lg);
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    gap: 0;
+  }
+  
+  body.dark .navbar__menu {
+    background: var(--color-gray-100);
+  }
+
+  .navbar__menu.open {
+    transform: translateX(0);
+  }
+
+  .navbar__link {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .navbar__link::after {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar__hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+
+  .navbar__hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar__hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+
+  .navbar__actions .btn--whatsapp {
+    display: none;
+  }
+
+  .mindfulness-hero {
+    padding: calc(80px + var(--spacing-md)) var(--spacing-sm) var(--spacing-md);
+  }
+
+  .mindfulness-hero__content {
+    padding: var(--spacing-md);
+  }
+
+  .mindfulness-intro__text,
+  .mindfulness-intro__conclusion {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .practice-guide {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-guide__content {
+    padding: var(--spacing-md);
+  }
+
+  .practice-guide__frame {
+    min-height: 400px;
+  }
+
+  .video-gallery {
+    padding: var(--spacing-md);
+  }
+
+  .video-gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer__brand,
+  .footer__links,
+  .footer__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__logo {
+    max-width: 150px;
+  }
+
+  .footer__info li {
+    justify-content: center;
+  }
+}
